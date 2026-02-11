@@ -61,7 +61,7 @@ const Footer = () => {
                 alt="Ideafil Logo"
                 width={200}
                 height={80}
-                className="object-contain"
+                className="object-contain w-[150px] lg:w-[200px]"
               />
             </div>
             
@@ -71,8 +71,8 @@ const Footer = () => {
                 <Image
                   src={behance}
                   alt="Behance"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </a>
@@ -80,8 +80,8 @@ const Footer = () => {
                 <Image
                   src={x}
                   alt="X"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </a>
@@ -89,8 +89,8 @@ const Footer = () => {
                 <Image
                   src={instagram}
                   alt="Instagram"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </a>
@@ -98,8 +98,8 @@ const Footer = () => {
                 <Image
                   src={linkedin}
                   alt="LinkedIn"
-                  width={24}
-                  height={24}
+                  width={20}
+                  height={20}
                   className="object-contain"
                 />
               </a>
@@ -112,15 +112,15 @@ const Footer = () => {
           <hr className="my-12 border-white/20" />
 
           {/* Bottom row */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-6 text-sm text-white/60">
+          <div className="flex flex-col md:flex-row justify-between items-center lg:items-start gap-6 text-sm text-white/60">
             {/* Copyright */}
-            <div className="text-right text-gray-400 text-[16px]">
+            <div className="hidden lg:block text-right text-gray-400 text-[16px]">
               © 2026 ideafil. جميع الحقوق محفوظة
             </div>
            
             {/* Contact */}
             <div className="flex flex-col md:flex-row gap-6">
-              <span className="flex text-gray-400 text-[16px] items-center gap-2">
+              <span className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2">
                 <Image
                   src={maps}
                   alt="Location"
@@ -131,7 +131,7 @@ const Footer = () => {
                الخبر ــ  المملكة العربية السعودية
               </span>
 
-              <span className="flex text-gray-400 text-[16px] items-center gap-2">
+              <span className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2">
                 <Image
                   src={email}
                   alt="Email"
@@ -141,7 +141,7 @@ const Footer = () => {
                 />
                 info@ideafil.co
               </span>
-              <span dir="ltr" className="flex text-gray-400 text-[16px] items-center gap-2">
+              <span dir="rtl lg:ltr" className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2">
                 +966 50 774 7972
                 <Image
                   src={phone}
@@ -152,6 +152,10 @@ const Footer = () => {
                 />
               </span>
           
+            </div>
+
+            <div className="block lg:hidden text-right text-gray-400 text-[16px]">
+              © 2026 ideafil. جميع الحقوق محفوظة
             </div>
 
            

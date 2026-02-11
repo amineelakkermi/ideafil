@@ -232,7 +232,7 @@ export default function Navbar() {
                 alt="Ideafil Logo Arabic"
                 width={200}
                 height={80}
-                className={`${open ? "opacity-0 scale-95" : "opacity-100 scale-100"} transition-all duration-300`}
+                className={`${open ? "opacity-0 scale-95" : "opacity-100 scale-100"} w-[150px] lg:w-[200px] transition-all duration-300`}
                 priority
               />
             </Link>

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
+import { usePathname, useRouter } from 'next/navigation'
 
 const navLinks = [
   { name: 'الرئيسيــة', href: '/' },
@@ -10,12 +11,14 @@ const navLinks = [
   { name: 'الأعمـــال الأخيرة', href: '/works' },
 ]
 
-export default function Navbar2() {
+export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const mobileMenuRef = useRef(null);
   const mobileListRef = useRef(null);
+  const pathname = usePathname();
+  const router = useRouter();
 
   // Gérer le scroll pour changer le fond
   useEffect(() => {
@@ -95,6 +98,27 @@ export default function Navbar2() {
     };
   }, [open]);
 
+  const handleLinkClick = (e, href) => {
+    e.preventDefault();
+    setOpen(false);
+
+    if (href.startsWith('/#')) {
+      const hash = href.replace('/#', '#');
+      const element = document.querySelector(hash);
+      if (element) element.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    router.push(href);
+  };
+
+  const linkClasses = (href) => {
+    const isActive = pathname === href.split('#')[0];
+    return `relative transition-all duration-300 hover:opacity-80 ${
+      scrolled ? 'text-white' : 'text-white'
+    } ${isActive ? (scrolled ? 'opacity-100' : 'opacity-100') : 'opacity-90'}`;
+  };
+
   return (
     <>
       <style jsx>{`
@@ -142,15 +166,62 @@ export default function Navbar2() {
         .animate-item-in {
           animation: itemIn 0.3s ease-out forwards;
         }
+
+        @keyframes glowIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+
+        .animate-glow-in {
+          animation: glowIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
       
       <nav
         dir="rtl"
-        className={`w-full  sticky top-0 left-0 right-0 relative z-[9999] transition-all duration-300
-          bg-dark `}
+        className={`sticky top-0 left-0 right-0 z-[9999] transition-all duration-300 bg-dark`}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <div className="h-[90px] flex items-center justify-between">
+          <div className="h-[90px] flex items-center justify-between relative">
+
+            {/* Mobile Menu Button (always left) */}
+            <button
+              onClick={() => setOpen(!open)}
+              className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 text-white p-2 rounded-lg hover:bg-white/10 transition-all duration-300 z-[1000]"
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={open}
+            >
+              <svg
+                className={`w-7 h-7 text-white transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                {open ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16" />
+                )}
+              </svg>
+            </button>
 
             {/* Logo Right */}
             <Link href='/' className="flex items-center min-w-[150px]">
@@ -159,7 +230,7 @@ export default function Navbar2() {
                 alt="Ideafil Logo Arabic"
                 width={200}
                 height={80}
-                className={`${open ? "opacity-0 scale-95" : "opacity-100 scale-100"} transition-all duration-300`}
+                className={`${open ? "opacity-0 scale-95" : "opacity-100 scale-100"} w-[150px] lg:w-[200px] transition-all duration-300`}
                 priority
               />
             </Link>
@@ -170,9 +241,8 @@ export default function Navbar2() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className={`relative transition-all duration-300 hover:opacity-80 hover:scale-105 ${
-                    scrolled ? 'text-white' : 'text-white'
-                  }`}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className={linkClasses(link.href)}
                 >
                   {link.name}
                 </Link>
@@ -184,32 +254,10 @@ export default function Navbar2() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="hidden md:flex items-center justify-center px-[15px] py-[2px] gap-[10px] w-[130px] h-[45px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300"
+                className="hidden md:flex items-center justify-center px-[15px] py-[2px] gap-[10px] w-[150px] h-[55px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300"
               >
                 <span className="text-base font-medium">تواصل معنا</span>
               </Link>
-              
-              {/* Mobile Button */}
-              <button
-                onClick={() => setOpen(!open)}
-                className="md:hidden p-2 rounded-lg hover:bg-white/10 transition-all duration-300 z-[1000]"
-                aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-                aria-expanded={open}
-              >
-                <svg
-                  className={`w-6 h-6 transition-transform duration-300 ${open ? 'rotate-45' : 'rotate-0'}`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  {open ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16" />
-                  )}
-                </svg>
-              </button>
             </div>
           </div>
         </div>
@@ -218,7 +266,8 @@ export default function Navbar2() {
         {(open || isAnimating) && (
           <div
             ref={mobileMenuRef}
-            className={`fixed inset-0 z-[999] flex items-start justify-start bg-dark/95 backdrop-blur-lg ${
+            className={`fixed inset-0 z-[9999] flex flex-col items-center justify-center
+               bg-gradient-to-br from-[#110023] via-[#2a0055] to-[#110023] ${
               !open && isAnimating ? 'animate-menu-close' : ''
             }`}
             onClick={(e) => {
@@ -227,31 +276,66 @@ export default function Navbar2() {
               }
             }}
           >
+            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-20 right-20 w-32 h-32 bg-white rounded-full" />
+              <div className="absolute bottom-20 left-20 w-24 h-24 bg-white rounded-full" />
+            </div>
+
             <nav 
               aria-label="Main navigation" 
-              className="w-full px-8 md:px-16 pt-32"
+              className="w-full px-8"
               onClick={(e) => e.stopPropagation()}
             >
-              <ul ref={mobileListRef} className="flex flex-col gap-4">
+              <button
+                onClick={() => setOpen(false)}
+                className="absolute top-8 left-8 text-white hover:text-purple-200 transition-all duration-300 transform hover:scale-110 hover:rotate-90"
+                aria-label="Fermer le menu"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div className="absolute top-8 right-8">
+                <Image
+                  src="/logo1.png"
+                  alt="Ideafil Logo Arabic"
+                  width={120}
+                  height={50}
+                  className="object-contain filter brightness-0 invert"
+                />
+              </div>
+
+              <ul ref={mobileListRef} className="flex flex-col items-center gap-6 z-10 mt-8">
                 {navLinks.map((link, index) => (
                   <li 
                     key={link.name} 
                     className="flex items-start gap-4 group opacity-0 translate-y-5"
                   >
-                    <span className="text-sm md:text-base font-light text-white/60 mt-2 min-w-[2rem]">
-                      0{index + 1}
-                    </span>
                     <Link
                       href={link.href}
-                      className="text-4xl md:text-6xl lg:text-7xl font-black uppercase text-white hover:text-white/70 transition-all duration-300 leading-none tracking-tight"
-                      onClick={() => setOpen(false)}
-                      style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+                      onClick={(e) => handleLinkClick(e, link.href)}
+                      className="text-white text-[20px] font-medium px-8 py-4 rounded-full border-2 border-white/30 hover:border-white hover:bg-white/10 transform transition-all duration-300 hover:scale-105 w-48 text-center backdrop-blur-sm"
+                      style={{
+                        animation: 'fadeInUp 0.5s ease-out forwards',
+                        opacity: 0,
+                        animationDelay: `${index * 100}ms`,
+                      }}
                     >
                       {link.name}
                     </Link>
                   </li>
                 ))}
               </ul>
+
+            
             </nav>
           </div>
         )}
