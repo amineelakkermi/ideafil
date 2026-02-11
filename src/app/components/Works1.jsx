@@ -68,7 +68,7 @@ const Works1 = () => {
         {/* Top */}
         <div className="w-full flex flex-row gap justify-between items-center md:items-start">
           <RoundedTitle title="نماذج من أعمالنا" />
-          <span className="text-white text-[16px] lg:text-[20px] leading-snug text-right">
+          <span className="hidden sm:block text-white text-[16px] lg:text-[20px] leading-snug text-right">
             مهما كان التحدي <br />
             نفصل لك الحل لي يناسبك
           </span>
