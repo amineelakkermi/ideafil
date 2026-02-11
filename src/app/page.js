@@ -10,30 +10,34 @@ import Navbar from './components/Navbar';
 
 export default function Home() {
   return (
-  <div className="min-h-screen relative">
+  <div className="relative">
     
-   <Navbar />
+ 
     {/* Background Video - Only on Home page */}
-   <div className='w-full min-h-screen absolute left-0 right-0 top-0'>
-    <video
+   <div className='w-full min-h-[100vh]'>
+    <Navbar />
+    <div className='absolute top-0 left-0 right-0 -z-10'>
+     <video
     autoPlay
     loop
     muted
     playsInline
-    className="w-[100%] min-h-screen object-cover"
+    className="w-[100%] min-h-[120vh] object-cover"
     >
     <source src="/backgroundVideo.mp4" type="video/mp4" />
     </video>
-   </div>
+    </div>
+     <div className="snap-item">
+     <Hero />
+     </div>
 
+   </div>
     <div className='absolute inset-0 w-full h-full opacity-50 bg-gradient-to-b from-black/40 via-black/60 to-black/80 backdrop-blur-sm'></div>
       
      
       {/* Content */}
       <div className="relative">
-        <div className="snap-item">
-          <Hero />
-        </div>
+       
         <div className="snap-item">
           <Services1 />
         </div>
