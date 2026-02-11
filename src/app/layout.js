@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ScrollTop from "./components/ScrollTop";
 
 // Police personnalisée
 const handicrafts = localFont({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${handicrafts.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <ScrollTop />
         {children}
         <Footer />
       </body>
