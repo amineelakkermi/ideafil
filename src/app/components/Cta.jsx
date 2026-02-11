@@ -6,7 +6,7 @@ const Cta = () => {
   return (
     <section
       id="stats"
-      className={`relative w-full min-h-screen
+      className={`relative w-full min-h-[100vh]
     
       bg-dark overflow-hidden flex flex-col justify-center items-center`}
     >
@@ -15,7 +15,7 @@ const Cta = () => {
         src={ctaBg}
         alt="Background gradient"
         fill
-        className="object-cover z-0"
+        className="object-cover z-0 min-h-[100vh]"
         priority
       />
 

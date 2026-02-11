@@ -9,7 +9,7 @@ export default {
     extend: {
       colors: {
         // Couleurs principales
-        dark: '#1A0046',
+        dark: '#050519',
         mauve: '#7F00FE',
         blue: '#00BFFE',
         pink: '#FE0060',

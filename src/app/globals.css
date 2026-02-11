@@ -18,13 +18,29 @@ html, body {
 html {
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 /* Optimisation pour mobile */
 @media (max-width: 768px) {
   html {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
   }
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.snap-item {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 
@@ -49,6 +65,7 @@ html {
 
 .dark{
   background: #110023;
+  background: #050519;
 }
 
 body {

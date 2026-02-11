@@ -153,7 +153,7 @@ export default function Navbar2() {
           <div className="h-[90px] flex items-center justify-between">
 
             {/* Logo Right */}
-            <div className="flex items-center min-w-[150px]">
+            <Link href='/' className="flex items-center min-w-[150px]">
               <Image
                 src="/logo1.png"
                 alt="Ideafil Logo Arabic"
@@ -162,7 +162,7 @@ export default function Navbar2() {
                 className={`${open ? "opacity-0 scale-95" : "opacity-100 scale-100"} transition-all duration-300`}
                 priority
               />
-            </div>
+            </Link>
 
             {/* Desktop Links */}
             <div className="hidden md:flex items-center gap-16  font-medium">

@@ -28,7 +28,7 @@ const logos = [
 const Partners = () => {
   return (
     <section className={`min-h-screen bg-dark text-white ${styles.padding}`}>
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-12 mb-24">
           <Title title={<> شركــاء النجـــاح </>} />

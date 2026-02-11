@@ -20,7 +20,7 @@ export default function Home() {
     loop
     muted
     playsInline
-    className="w-[100%] h-[100%] object-cover"
+    className="w-[100%] min-h-screen object-cover"
     >
     <source src="/backgroundVideo.mp4" type="video/mp4" />
     </video>
@@ -31,13 +31,27 @@ export default function Home() {
      
       {/* Content */}
       <div className="relative">
-        <Hero />
-        <Services1 />
-        <Slides />
-        <Works1 />
-        <Stats />
-        <Partners />
-        <Cta />
+        <div className="snap-item">
+          <Hero />
+        </div>
+        <div className="snap-item">
+          <Services1 />
+        </div>
+        <div className="snap-item">
+          <Slides />
+        </div>
+        <div className="snap-item">
+          <Works1 />
+        </div>
+        <div className="snap-item">
+          <Stats />
+        </div>
+        <div className="snap-item">
+          <Partners />
+        </div>
+        <div className="snap-item">
+          <Cta />
+        </div>
       </div>
     </div>
   );
