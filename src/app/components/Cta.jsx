@@ -1,0 +1,42 @@
+import Image from 'next/image'
+import ctaBg from "../../../public/ctaBg.png";
+import styles from '../style';
+
+const Cta = () => {
+  return (
+    <section
+      id="stats"
+      className={`relative w-full min-h-screen
+    
+      bg-dark overflow-hidden flex flex-col justify-center items-center`}
+    >
+      {/* Background Image */}
+      <Image
+        src={ctaBg}
+        alt="Background gradient"
+        fill
+        className="object-cover z-0"
+        priority
+      />
+
+      <div className='relative z-10 w-full flex flex-col justify-center items-center gap-12'>
+      <div className="inline-block max-w-[250px] px-10 py-2 rounded-full bg-pink">
+      <p className="text-white text-base sm:text-lg">
+       أكيد حــاب تكلمـــنا
+      </p>
+      </div>
+
+      <h2 className={`text-[35px] lg:text-[40px] text-center text-white`}>
+        لنكتشــف معا قـــوة حضــــورك
+        <br />
+        تواصل معنا اليوم وابدأ رحلتك نحو التأثير والتميز
+       </h2>
+      </div>
+
+      
+
+    </section>
+  )
+}
+
+export default Cta
