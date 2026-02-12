@@ -193,8 +193,7 @@ const AllWorks = () => {
       
       <section id="works" className={`bg-dark ${styles.padding}`}>
         <div className="max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center">
-          <RoundedTitle title="جميع أعمالنا" />
-          <Divider />
+          
 
           {/* Main 2-column container */}
           <div className="grid grid-cols-2 gap-8 md:gap-12 w-full desktop-only">
