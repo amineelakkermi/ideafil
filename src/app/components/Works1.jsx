@@ -88,7 +88,8 @@ const Works1 = () => {
         {worksData.map((work, index) => (
           <div
             key={work.id}
-            className="work-panel relative w-[70vw] h-[75vh] flex-shrink-0 overflow-hidden rounded-2xl"
+            className="work-panel relative w-[70vw] h-[60vh] lg:h-[75vh] flex-shrink-0 overflow-hidden
+             rounded-2xl"
           >
             {/* Image Fullscreen */}
             <Image
@@ -100,9 +101,9 @@ const Works1 = () => {
             />
 
             {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-end p-16">
-              <div className="overlay-content backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-8 py-4">
-                <h3 className="text-white text-3xl font-semibold whitespace-nowrap">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-end p-8">
+              <div className="overlay-content backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3">
+                <h3 className="text-white text-[18px] sm:text-[20px] lg:text-[25px] font-semibold whitespace-nowrap">
                   {work.title}
                 </h3>
               </div>
