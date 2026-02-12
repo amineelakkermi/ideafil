@@ -32,7 +32,7 @@ const Works1 = () => {
   })
 
   // translate X de 0% à -100%
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "70%"])
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
     <section id="works" className="bg-dark">
@@ -50,7 +50,7 @@ const Works1 = () => {
       </div>
 
       {/* Scroll Section */}
-      <div ref={sectionRef} className="relative h-[300vh]">
+      <div ref={sectionRef} className="relative h-[500vh]">
 
         <div className="sticky top-0 h-screen overflow-hidden flex items-center">
 
@@ -61,7 +61,7 @@ const Works1 = () => {
             {worksData.map((work, index) => (
               <div
                 key={work.id}
-                className="relative w-[500px] h-[400px] flex-shrink-0 rounded-2xl overflow-hidden"
+                className="relative w-[400px] md:w-[500px] h-[300px] md:h-[400px] flex-shrink-0 rounded-2xl overflow-hidden"
               >
                 <Image
                   src={work.img}
