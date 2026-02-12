@@ -116,7 +116,7 @@ export default function Navbar() {
     const isActive = pathname === href.split('#')[0];
     return `relative transition-all duration-300 hover:opacity-80 ${
       scrolled ? 'text-white' : 'text-white'
-    } ${isActive ? (scrolled ? 'opacity-100' : 'opacity-100') : 'opacity-90'}`;
+    } ${isActive ? (scrolled ? 'opacity-100' : 'opacity-100') : 'opacity-90'} group`;
   };
 
   return (
@@ -196,7 +196,7 @@ export default function Navbar() {
       
       <nav
         dir="rtl"
-        className={`sticky top-0 left-0 right-0 z-[9999] transition-all duration-300 bg-dark`}
+        className={`sticky bg-dark top-0 left-0 right-0 z-[999] transition-all duration-300`}
       >
         <div className="max-w-6xl mx-auto px-6">
           <div className="h-[90px] flex items-center justify-between relative">
@@ -236,7 +236,7 @@ export default function Navbar() {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-16  font-medium">
+            <div className="hidden md:flex items-center gap-16 font-medium">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -244,7 +244,7 @@ export default function Navbar() {
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={linkClasses(link.href)}
                 >
-                  {link.name}
+                  <span className="relative z-10 transition-all duration-300 group-hover:text-purple-300">{link.name}</span>
                 </Link>
               ))}
             </div>
@@ -254,9 +254,9 @@ export default function Navbar() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="hidden md:flex items-center justify-center px-[15px] py-[2px] gap-[10px] w-[150px] h-[55px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300"
+                className="hidden md:flex items-center justify-center px-[15px] py-[2px] gap-[10px] w-[150px] h-[55px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
               >
-                <span className="text-base font-medium">تواصل معنا</span>
+                <span className="text-base font-medium relative z-10">تواصل معنا</span>
               </Link>
             </div>
           </div>
@@ -329,7 +329,7 @@ export default function Navbar() {
                         animationDelay: `${index * 100}ms`,
                       }}
                     >
-                      {link.name}
+                      <span className="relative z-10 transition-all duration-300 group-hover:text-purple-300">{link.name}</span>
                     </Link>
                   </li>
                 ))}
