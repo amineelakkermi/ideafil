@@ -220,7 +220,7 @@ const AllWorks = () => {
 
           </div>
 
-            <div className="grid md:hidden grid-cols-1 gap-6 md:gap-8 lg:gap-12 w-full items-center">
+          <div className="grid md:hidden grid-cols-1 gap-6 md:gap-8 lg:gap-12 w-full items-center">
             
             {/* Left container with infinite scroll */}
             <div className="relative  overflow-hidden">
@@ -233,7 +233,7 @@ const AllWorks = () => {
             </div>
 
            
-          </div>
+        </div>
 
           
 
