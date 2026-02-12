@@ -17,7 +17,6 @@ export default function Home() {
    <div className='w-full min-h-[100vh]'>
     <Navbar />
     <div className='absolute top-0 left-0 right-0'>
-     {/* 
      <Image
      src={background1}
      alt='Background Image'
@@ -25,7 +24,8 @@ export default function Home() {
      
      />
      
-     */}
+     {/* 
+
       <video
      autoPlay
      loop
@@ -35,6 +35,8 @@ export default function Home() {
      >
      <source src="/backgroundVideo.mp4" type="video/mp4" />
      </video>
+     */}
+
      
     </div>
      <Hero />

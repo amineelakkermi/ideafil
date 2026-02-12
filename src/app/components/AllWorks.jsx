@@ -134,6 +134,15 @@ const AllWorks = () => {
           }
         }
         
+        @keyframes scrollHorizontal {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        
         .scroll-up {
           animation: scrollUp 60s linear infinite;
         }
@@ -142,9 +151,43 @@ const AllWorks = () => {
           animation: scrollDown 60s linear infinite;
         }
         
+        .scroll-horizontal {
+          animation: scrollHorizontal 100s linear infinite;
+        }
+        
         .scroll-up:hover,
-        .scroll-down:hover {
+        .scroll-down:hover,
+        .scroll-horizontal:hover {
           animation-play-state: paused;
+        }
+        
+        @media (max-width: 640px) {
+          .mobile-scroll-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: hidden;
+          }
+          
+          .mobile-scroll {
+            display: flex;
+            gap: 1rem;
+            min-width: max-content;
+          }
+          
+          .mobile-card {
+            min-width: 280px;
+            height: 200px;
+          }
+          
+          .desktop-only {
+            display: none;
+          }
+        }
+        
+        @media (min-width: 641px) {
+          .mobile-scroll-container {
+            display: none;
+          }
         }
       `}</style>
       
@@ -154,7 +197,7 @@ const AllWorks = () => {
           <Divider />
 
           {/* Main 2-column container */}
-          <div className="grid grid-cols-2 gap-8 md:gap-12 w-full">
+          <div className="grid grid-cols-2 gap-8 md:gap-12 w-full desktop-only">
             
             {/* Left container with infinite scroll */}
             <div className="relative h-[250px] sm:h-[600px] md:h-[700px] overflow-hidden">
@@ -176,6 +219,16 @@ const AllWorks = () => {
               </div>
             </div>
 
+          </div>
+
+          {/* Mobile horizontal scroll container */}
+          <div className="mobile-scroll-container relative h-[300px] overflow-hidden">
+            <div className="scroll-horizontal mobile-scroll">
+              {/* Duplicate works for seamless loop */}
+              {[...worksData, ...worksData].map((work, index) => (
+                <MobileWorkCard key={`${work.id}-mobile-${index}`} work={work} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -217,6 +270,48 @@ const WorkCard = ({ work }) => (
               alt="Behance"
               width={24}
               height={24}
+              className="object-contain"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+// Mobile WorkCard component for horizontal scroll
+const MobileWorkCard = ({ work }) => (
+  <div className="mobile-card group relative overflow-hidden rounded-[8px] cursor-pointer">
+    {/* Image */}
+    <Image 
+      src={work.img} 
+      alt={work.name} 
+      className="w-full h-full rounded-[8px] object-cover transition-transform duration-500 group-hover:scale-105" 
+    />
+    
+    {/* Glassmorphism Overlay - Visible on Hover */}
+    <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] flex flex-col justify-end p-4 z-10">
+      <div className="flex items-center justify-end gap-2">
+        {/* Title Glassmorphism Div */}
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-3 py-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
+          <h3 className="text-white text-sm font-semibold text-right whitespace-nowrap">
+            {work.title}
+          </h3>
+        </div>
+        
+        {/* Behance Link Glassmorphism Div */}
+        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-3 py-2 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+          <a
+            href={work.behanceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-white/90 hover:text-white transition-colors duration-200 text-right text-xs whitespace-nowrap"
+          >
+            <Image
+              src={behance}
+              alt="Behance"
+              width={16}
+              height={16}
               className="object-contain"
             />
           </a>
