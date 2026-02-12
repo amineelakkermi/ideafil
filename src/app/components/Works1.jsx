@@ -45,7 +45,7 @@ const Works1 = () => {
         trigger: triggerRef.current,
         start: "top top",
         end: () => "+=" + getMaxWidth(),
-        scrub: 0.4,
+        scrub: 0.8,
         pin: true,
         invalidateOnRefresh: true,
         anticipatePin: 1,
