@@ -27,35 +27,35 @@ const worksData = [
     name: "CONEX ™", 
     title: "CONEX ™",
     img: conex, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/232705721/CONEX-"
   },
   { 
     id: 2, 
     name: "Meliha Shawarma™", 
     title: "Meliha Shawarma™",
     img: meliha, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/222551581/-Meliha"
   },
   { 
     id: 3, 
     name: "Rahafah", 
     title: "Rahafah",
     img: rahafah, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/220220707/Rahafah-"
   },
   { 
     id: 4, 
     name: "Gsa Group", 
     title: "Gsa Group",
     img: gsa, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/199473005/GSA-group-"
   },
   { 
     id: 5, 
     name: "Vilack", 
     title: "Vilack",
     img: vilack, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/220572147/Vilack"
   },
   { 
     id: 6, 
@@ -69,7 +69,7 @@ const worksData = [
     name: "Plmyra", 
     title: "Plmyra",
     img: plmyra, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/225037769/Plmyra-"
   },
   { 
     id: 8, 
@@ -97,14 +97,14 @@ const worksData = [
     name: "Waraqty", 
     title: "Waraqty",
     img: waraqty, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/179359589/warqtiy-"
   },
   { 
     id: 12, 
     name: "Wish", 
     title: "Wish",
     img: wish, 
-    behanceUrl: "#"
+    behanceUrl: "https://www.behance.net/gallery/209593013/Wish-"
   },
 ];
 
