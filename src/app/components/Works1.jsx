@@ -36,7 +36,7 @@ const Works1 = () => {
   const ctx = gsap.context(() => {
 
     const getMaxWidth = () =>
-      containerRef.current.scrollWidth - window.innerWidth;
+    containerRef.current.scrollWidth - window.innerWidth;
 
     gsap.to(containerRef.current, {
       x: () => -getMaxWidth(),
@@ -44,7 +44,7 @@ const Works1 = () => {
       scrollTrigger: {
         trigger: triggerRef.current,
         start: "top top",
-        end: () => "+=" + getMaxWidth(),
+        end: () => "+=" + getMaxWidth() ,
         scrub: 0.8,
         pin: true,
         invalidateOnRefresh: true,
@@ -88,7 +88,7 @@ const Works1 = () => {
         {worksData.map((work, index) => (
           <div
             key={work.id}
-            className="work-panel relative w-[70vw] h-[60vh] lg:h-[75vh] flex-shrink-0 overflow-hidden
+            className="work-panel relative w-[400px] md:w-[500px] lg:w-[600px] h-[300px] md:h-[400px] lg:h-[500px]  flex-shrink-0 overflow-hidden
              rounded-2xl"
           >
             {/* Image Fullscreen */}

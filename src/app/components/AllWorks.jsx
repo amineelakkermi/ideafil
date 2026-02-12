@@ -191,15 +191,15 @@ const AllWorks = () => {
         }
       `}</style>
       
-      <section id="works" className={`bg-dark ${styles.padding}`}>
+      <section id="works" className={`bg-dark min-h-[100vh] ${styles.padding}`}>
         <div className="max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center">
           
 
           {/* Main 2-column container */}
-          <div className="grid grid-cols-2 gap-8 md:gap-12 w-full desktop-only">
+          <div className="hidden md:grid grid-cols-2 gap-6 md:gap-8 lg:gap-12 w-full items-center">
             
             {/* Left container with infinite scroll */}
-            <div className="relative h-[250px] sm:h-[600px] md:h-[700px] overflow-hidden">
+            <div className="relative  overflow-hidden">
               <div className="scroll-up flex flex-col gap-6 md:gap-8">
                 {/* Duplicate works for seamless loop */}
                 {[...leftColumnWorks, ...leftColumnWorks].map((work, index) => (
@@ -209,7 +209,7 @@ const AllWorks = () => {
             </div>
 
             {/* Right container with infinite scroll */}
-            <div className="relative h-[250px] sm:h-[600px] md:h-[700px] overflow-hidden">
+            <div className="relative  overflow-hidden">
               <div className="scroll-down flex flex-col gap-6 md:gap-8">
                 {/* Duplicate works for seamless loop */}
                 {[...rightColumnWorks, ...rightColumnWorks].map((work, index) => (
@@ -220,15 +220,24 @@ const AllWorks = () => {
 
           </div>
 
-          {/* Mobile horizontal scroll container */}
-          <div className="mobile-scroll-container relative h-[300px] overflow-hidden bg-dark">
-            <div className="scroll-horizontal mobile-scroll">
-              {/* Duplicate works for seamless loop */}
-              {[...worksData, ...worksData].map((work, index) => (
-                <MobileWorkCard key={`${work.id}-mobile-${index}`} work={work} />
-              ))}
+            <div className="grid md:hidden grid-cols-1 gap-6 md:gap-8 lg:gap-12 w-full items-center">
+            
+            {/* Left container with infinite scroll */}
+            <div className="relative  overflow-hidden">
+              <div className="scroll-up flex flex-col gap-6 md:gap-8">
+                {/* Duplicate works for seamless loop */}
+                {[...leftColumnWorks, ...leftColumnWorks].map((work, index) => (
+                  <WorkCard key={`${work.id}-left-${index}`} work={work} />
+                ))}
+              </div>
             </div>
+
+           
           </div>
+
+          
+
+         
         </div>
       </section>
     </>
