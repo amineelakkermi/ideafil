@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ScrollTop from "./components/ScrollTop";
+import FloatingButtons from "./components/FloatingButtons";
 
 // Police personnalisée
 const handicrafts = localFont({
@@ -35,6 +36,7 @@ export default function RootLayout({ children }) {
         className={`${handicrafts.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ScrollTop />
+        <FloatingButtons />
         {children}
         <Footer />
       </body>

@@ -35,7 +35,7 @@ const Works1 = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
-    <section id="works" className="bg-dark">
+    <section id="works" className="bg-dark ">
 
       {/* Header */}
       <div className={`max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center ${styles.padding}`}>
