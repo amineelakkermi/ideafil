@@ -15,6 +15,7 @@ const Footer = () => {
   // Répéter le texte pour créer un effet de boucle fluide sans espace
   const scrollingText = 'IDEAFIL';
   const textItems = Array.from({ length: 20 }, () => scrollingText);
+  const getCurrentYear = () => new Date().getFullYear();
 
   return (
     <>
@@ -48,7 +49,7 @@ const Footer = () => {
         }
       `}</style>
       
-      <footer className="relative bg-dark text-white overflow-hidden">
+      <footer dir="rtl" className="relative bg-dark text-white overflow-hidden">
         {/* Gradient background */}
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
@@ -67,7 +68,7 @@ const Footer = () => {
             
             {/* Social icons */}
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:opacity-80 transition">
+              <a target="_blank" href="https://www.behance.net/ideafilco1" className="hover:opacity-80 transition">
                 <Image
                   src={behance}
                   alt="Behance"
@@ -76,7 +77,7 @@ const Footer = () => {
                   className="object-contain"
                 />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
+              <a target="_blank" href="https://x.com/Ideafilsa" className="hover:opacity-80 transition">
                 <Image
                   src={x}
                   alt="X"
@@ -85,7 +86,7 @@ const Footer = () => {
                   className="object-contain"
                 />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
+              <a target="_blank" href="https://www.instagram.com/ideafil.sa/" className="hover:opacity-80 transition">
                 <Image
                   src={instagram}
                   alt="Instagram"
@@ -94,7 +95,7 @@ const Footer = () => {
                   className="object-contain"
                 />
               </a>
-              <a href="#" className="hover:opacity-80 transition">
+              <a target="_blank" href="https://www.linkedin.com/company/ideafil-co/" className="hover:opacity-80 transition">
                 <Image
                   src={linkedin}
                   alt="LinkedIn"
@@ -115,7 +116,10 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center lg:items-start gap-6 text-sm text-white/60">
             {/* Copyright */}
             <div className="hidden lg:block text-right text-gray-400 text-[16px]">
-              © 2026 ideafil. جميع الحقوق محفوظة
+              جميع الحقوق محفوظة
+              © {getCurrentYear()} ideafil
+
+
             </div>
            
             {/* Contact */}
@@ -131,7 +135,10 @@ const Footer = () => {
                الخبر ــ  المملكة العربية السعودية
               </span>
 
-              <span className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2">
+              <a 
+                href="mailto:info@ideafil.co" 
+                className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2 hover:text-white transition-colors duration-300"
+              >
                 <Image
                   src={email}
                   alt="Email"
@@ -140,8 +147,14 @@ const Footer = () => {
                   className="object-contain"
                 />
                 info@ideafil.co
-              </span>
-              <span dir="rtl lg:ltr" className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2">
+              </a>
+              
+              <a 
+                href="https://wa.me/966507747972" 
+                target="_blank"
+                dir="ltr" 
+                className="flex justify-center lg:justify-start text-gray-400 text-[16px] items-center gap-2 hover:text-white transition-colors duration-300"
+              >
                 +966 50 774 7972
                 <Image
                   src={phone}
@@ -150,12 +163,14 @@ const Footer = () => {
                   height={20}
                   className="object-contain"
                 />
-              </span>
+              </a>
           
             </div>
 
-            <div className="block lg:hidden text-right text-gray-400 text-[16px]">
-              © 2026 ideafil. جميع الحقوق محفوظة
+            <div  className="block lg:hidden text-right text-gray-400 text-[16px]">
+               جميع الحقوق محفوظة
+               © {getCurrentYear()} ideafil.
+
             </div>
 
            
