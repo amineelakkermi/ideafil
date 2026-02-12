@@ -222,7 +222,7 @@ const AllWorks = () => {
           </div>
 
           {/* Mobile horizontal scroll container */}
-          <div className="mobile-scroll-container relative h-[300px] overflow-hidden">
+          <div className="mobile-scroll-container relative h-[300px] overflow-hidden bg-dark">
             <div className="scroll-horizontal mobile-scroll">
               {/* Duplicate works for seamless loop */}
               {[...worksData, ...worksData].map((work, index) => (
