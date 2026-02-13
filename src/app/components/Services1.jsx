@@ -17,7 +17,7 @@ const services = [
     color: 'bg-white',
   },
   {
-    title: 'الراندينق \n و الهوية البصرية ',
+    title: 'البراندينق \n و الهوية البصرية ',
     color: 'bg-mauve',
   },
 ]

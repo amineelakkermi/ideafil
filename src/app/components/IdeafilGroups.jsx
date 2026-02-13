@@ -89,7 +89,7 @@ const IdeafilGroups = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
             <div className="flex-1 flex flex-col gap-6 text-right">
               <Title title={<> مجمــوعة {" "}
-              <span className='text-pink'>أيدفيــــل</span>  
+              <span className='text-pink'>أيدفـــــل</span>  
               </>}
               />
               <p className={styles.paragraph}>
@@ -146,7 +146,7 @@ const IdeafilGroups = () => {
         </div>
       </div>
     ))}
-  </div>
+       </div>
          </div>
 
         </div>
