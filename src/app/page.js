@@ -51,7 +51,6 @@ export default function Home() {
        
           <Services1 />
           <Slides />
-          <Works1 />
           <Stats />
           <Partners />
           <IdeafilGroups />

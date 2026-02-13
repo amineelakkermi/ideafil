@@ -39,7 +39,7 @@ const cards = [
     description:
       "مبادرة نخلق من خلالها محتوى إبداعي وتعليمي يواكب السوق السعودي , ويفيد المجتمع و القطاع بأسلوب ممتع , ذكي وقريب من الناس",
     highlight: "الثقافة & المعرفة :) بطريقتنا",
-    bg: "bg-[#FEF9F5]",
+    bg: "bg-[#FF0161]",
     logo: impact,
   },
 ]
@@ -72,13 +72,27 @@ const IdeafilGroups = () => {
   }
 
   @keyframes scroll {
-    from{
+    from {
     transform: translateX(0);
     }
-    to{
+    to {
     transform: translateX(-50%);
     }
   }
+  @keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+.shape-float {
+  animation: float 3s ease-in-out infinite;
+}
+    
+   
+ 
+
+ 
 `}</style>
 
       
@@ -89,7 +103,7 @@ const IdeafilGroups = () => {
           <div className="flex flex-col px-6 lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="flex-1 flex flex-col gap-6 text-right">
               <Title title={<> مجمــوعة {" "}
-              <span className='text-pink'>أيدفـــــل</span>  
+              <span className="text-pink">أيدفـــــل</span>  
               </>}
               />
               <p className={styles.paragraph}>
@@ -98,13 +112,15 @@ const IdeafilGroups = () => {
             </div>
 
             <div className="flex-1 hidden lg:flex justify-end">
-              <Image
-                src={shape}
-                alt="shape"
-                width={400}
-                height={400}
-                className="object-cover"
-              />
+             <div className="shape-float">
+             <Image
+             src={shape}
+             alt="shape"
+             width={400}
+             height={400}
+             className="object-cover"
+             />
+            </div>
             </div>
           </div>
 
@@ -120,27 +136,24 @@ const IdeafilGroups = () => {
          transition-all duration-500 hover:scale-[1.02]`}
          >
         {/* Logo */}
-        <div className="absolute -top-6 sm:-top-8 md:-top-10 left-6 sm:left-8 md:left-10 w-16 sm:w-20 md:w-28 h-16 sm:h-20 md:h-28 rounded-full flex items-center justify-center">
+        <div className="absolute -top-6 sm:-top-8 md:-top-10 left-6 sm:left-8 md:left-10 w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full flex items-center justify-center">
           <Image
             src={card.logo}
             alt={card.title}
             width={40}
             height={40}
-            className="sm:w-10 sm:h-10 md:w-14 md:h-14"
+            className="w-10 h-10 sm:w-10 sm:h-10 md:w-14 md:h-14"
           />
         </div>
 
         {/* Content */}
         <div className="h-full flex flex-col justify-center text-right gap-2 sm:gap-3 text-white">
-          <h3 className={`text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-bold ${index === 2 ? "text-black" : "text-white"}`}>{card.title}</h3>
-          <p className={`text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]  ${index === 2 ? "text-black" : "text-white"}" `}>{card.subtitle}</p>
-          <p className={`text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px]  leading-relaxed ${index === 2 ? "text-black" : "text-white"}`}>
+          <h3 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-bold">{card.title}</h3>
+          <p className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] opacity-80">{card.subtitle}</p>
+          <p className="text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px] opacity-90 leading-relaxed">
             {card.description}
           </p>
-          <h4 className={`text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl
-          font-semibold mt-2 sm:mt-3 md:mt-4
-          ${index === 2 ? "text-black" : "text-white"}
-          `}>
+          <h4 className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl font-semibold mt-2 sm:mt-3 md:mt-4">
             {card.highlight}
           </h4>
         </div>

@@ -67,14 +67,15 @@ const Works1 = () => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end end"],
+    pin: true,
   })
 
   // translate X de 0% à -100%
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
 
   return (
-    <section id="works" className="bg-dark ">
+    <section ref={sectionRef} id="works" className="bg-dark min-h-[100vh] ">
 
       {/* Header */}
       <div className={`max-w-6xl mx-auto  flex flex-col gap-12 items-center ${styles.padding}`}>
@@ -89,9 +90,9 @@ const Works1 = () => {
       </div>
 
       {/* Scroll Section */}
-      <div ref={sectionRef} className="relative h-[500vh]">
+      <div  className="relative h-screen flex justify-center items-center">
 
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+        <div className="sticky top-0 overflow-hidden flex items-center">
 
           <motion.div
             style={{ x }}
