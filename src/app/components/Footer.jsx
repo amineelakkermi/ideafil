@@ -10,6 +10,7 @@ import email from "../../../public/email.png";
 import phone from "../../../public/phone.png";
 import maps from "../../../public/maps.png";
 import Ideafil from "./Ideafil";
+import Link from "next/link";
 
 const Footer = () => {
   // Répéter le texte pour créer un effet de boucle fluide sans espace
@@ -56,7 +57,7 @@ const Footer = () => {
           {/* Top row */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Logo */}
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <Image
                 src={logo1}
                 alt="Ideafil Logo"
@@ -64,7 +65,7 @@ const Footer = () => {
                 height={80}
                 className="object-contain w-[150px] lg:w-[200px]"
               />
-            </div>
+            </Link>
             
             {/* Social icons */}
             <div className="flex items-center gap-6">
