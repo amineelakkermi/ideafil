@@ -61,7 +61,7 @@ const Works1 = () => {
             {worksData.map((work, index) => (
               <div
                 key={work.id}
-                className="relative w-[400px] md:w-[500px] h-[300px] md:h-[400px] flex-shrink-0 rounded-2xl overflow-hidden"
+                className="group relative w-[400px] md:w-[500px] h-[300px] md:h-[400px] flex-shrink-0 rounded-2xl overflow-hidden"
               >
                 <Image
                   src={work.img}
@@ -72,14 +72,14 @@ const Works1 = () => {
                   className="object-cover"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-end p-8">
-                  <div className="bg-black/50 rounded-full px-6 py-3">
-                    <h3 className="text-white text-xl font-semibold whitespace-nowrap">
-                      {work.title}
-                    </h3>
-                  </div>
+             
+                <div className="absolute bottom-3 right-3 backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                <h3 className="text-white text-xl md:text-2xl font-semibold text-right whitespace-nowrap">
+                {work.title}
+               </h3>
+               </div>
+              
                 </div>
-              </div>
             ))}
           </motion.div>
 
