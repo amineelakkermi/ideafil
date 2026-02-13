@@ -30,7 +30,7 @@ const Partners = () => {
     <section className={`min-h-screen bg-dark text-white ${styles.padding}`}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-center gap-12 mb-24">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-24">
           <Title title={<> شركــاء النجـــاح </>} />
 
         

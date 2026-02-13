@@ -58,13 +58,7 @@ const worksData = [
     img: vilack, 
     behanceUrl: "https://www.behance.net/gallery/220572147/Vilack"
   },
-  { 
-    id: 6, 
-    name: "Kyar", 
-    title: "Kyar",
-    img: kyar, 
-    behanceUrl: "#"
-  },
+ 
  
 ];
 
@@ -73,17 +67,19 @@ const Works1 = () => {
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end end"],
+    speed: 0.5,
+    pin: true,
   })
 
   // translate X de 0% à -100%
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  const x = useTransform(scrollYProgress, [0 , 1], ["0%", "75%"])
 
   return (
-    <section id="works" className="bg-dark ">
+    <section ref={sectionRef} id="works" className="bg-dark ">
 
       {/* Header */}
-      <div className={`max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center ${styles.padding}`}>
+      <div className={`max-w-6xl mx-auto flex flex-col gap-12 items-center ${styles.padding}`}>
         <div className="w-full flex justify-between items-center">
           <RoundedTitle title="نماذج من أعمالنا" />
           <span className="hidden sm:block text-white text-[16px] lg:text-[20px] text-right">
@@ -95,9 +91,9 @@ const Works1 = () => {
       </div>
 
       {/* Scroll Section */}
-      <div ref={sectionRef} className="relative h-[500vh]">
+      <div  className="relative">
 
-        <div className="sticky top-0 h-screen overflow-hidden flex items-center">
+        <div className="sticky top-0 my-20 overflow-hidden flex items-center">
 
           <motion.div
             style={{ x }}
@@ -105,8 +101,12 @@ const Works1 = () => {
           >
             {worksData.map((work, index) => (
               <div
-                key={work.id}
-                className="group relative w-[400px] md:w-[500px] h-[300px] md:h-[400px] flex-shrink-0 rounded-2xl overflow-hidden"
+              key={work.id}
+              className="group relative
+              w-[400px]  h-[400px]
+              md:w-[500px] md:h-[500px]
+              lg:w-[600px] lg:h-[450px]
+              rounded-2xl overflow-hidden"
               >
                 <Image
                   src={work.img}
@@ -118,7 +118,7 @@ const Works1 = () => {
                 />
 
              
-               <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] flex flex-col justify-end p-6 z-10">
+               <div className="absolute bottom-3 right-3 bg-gradient-to-t from-dark/95 via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] flex flex-col justify-end p-6 z-10">
                      <div className="flex items-center justify-end gap-4">
                        {/* Title Glassmorphism Div */}
                        <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
@@ -156,8 +156,7 @@ const Works1 = () => {
       </div>
 
       {/* Footer */}
-      <div className={`max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center ${styles.padding}`}>
-        <Divider />
+      <div className={`max-w-6xl mx-auto  flex flex-col gap-12 items-center ${styles.padding}`}>
         <Link
           href="/works"
           className="inline-block px-7 py-3 rounded-full border-2 border-gray-400 hover:border-white/60 transition-colors duration-300"

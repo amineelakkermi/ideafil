@@ -86,7 +86,7 @@ const IdeafilGroups = () => {
         <div className={`max-w-6xl mx-auto flex flex-col gap-16 ${styles.padding}`}>
 
           {/* Header */}
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="flex flex-col px-6 lg:flex-row items-start lg:items-center justify-between gap-10">
             <div className="flex-1 flex flex-col gap-6 text-right">
               <Title title={<> مجمــوعة {" "}
               <span className='text-pink'>أيدفـــــل</span>  
