@@ -39,7 +39,7 @@ const cards = [
     description:
       "مبادرة نخلق من خلالها محتوى إبداعي وتعليمي يواكب السوق السعودي , ويفيد المجتمع و القطاع بأسلوب ممتع , ذكي وقريب من الناس",
     highlight: "الثقافة & المعرفة :) بطريقتنا",
-    bg: "bg-[#FF0161]",
+    bg: "bg-[#FEF9F5]",
     logo: impact,
   },
 ]
@@ -132,12 +132,15 @@ const IdeafilGroups = () => {
 
         {/* Content */}
         <div className="h-full flex flex-col justify-center text-right gap-2 sm:gap-3 text-white">
-          <h3 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-bold">{card.title}</h3>
-          <p className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] opacity-80">{card.subtitle}</p>
-          <p className="text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px] opacity-90 leading-relaxed">
+          <h3 className={`text-[16px] sm:text-[18px] md:text-[20px] lg:text-[24px] font-bold ${index === 2 ? "text-black" : "text-white"}`}>{card.title}</h3>
+          <p className={`text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px]  ${index === 2 ? "text-black" : "text-white"}" `}>{card.subtitle}</p>
+          <p className={`text-[12px] sm:text-[14px] md:text-[15px] lg:text-[16px]  leading-relaxed ${index === 2 ? "text-black" : "text-white"}`}>
             {card.description}
           </p>
-          <h4 className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl font-semibold mt-2 sm:mt-3 md:mt-4">
+          <h4 className={`text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl
+          font-semibold mt-2 sm:mt-3 md:mt-4
+          ${index === 2 ? "text-black" : "text-white"}
+          `}>
             {card.highlight}
           </h4>
         </div>
