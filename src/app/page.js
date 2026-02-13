@@ -8,6 +8,7 @@ import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Image from 'next/image';
 import background1 from '../../public/background1.png'
+import IdeafilGroups from './components/IdeafilGroups';
 
 export default function Home() {
   return (
@@ -53,6 +54,7 @@ export default function Home() {
           <Works1 />
           <Stats />
           <Partners />
+          <IdeafilGroups />
           <Cta />
       </div>
     </div>
