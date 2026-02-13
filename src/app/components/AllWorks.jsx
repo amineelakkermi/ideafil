@@ -192,7 +192,7 @@ const AllWorks = () => {
       `}</style>
       
       <section id="works" className={`bg-dark min-h-[100vh] ${styles.padding}`}>
-        <div className="max-w-6xl mx-auto px-4 flex flex-col gap-12 items-center">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col gap-12 items-center">
           
 
           {/* Main 2-column container */}
