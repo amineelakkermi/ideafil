@@ -14,14 +14,59 @@ import meliha from "../../../public/works/meliha.png"
 import rahafah from "../../../public/works/rahafah.png"
 import gsa from "../../../public/works/gsa.png"
 import vilack from "../../../public/works/vilack.png"
+import kyar from "../../../public/works/kyar.png"
+
+
+import behance from "../../../public/behance.png";
+
+
+
 
 const worksData = [
-  { id: 1, title: "CONEX ™", img: conex },
-  { id: 2, title: "Meliha Shawarma™", img: meliha },
-  { id: 3, title: "Rahafah", img: rahafah },
-  { id: 4, title: "Gsa Group", img: gsa },
-  { id: 5, title: "Vilack", img: vilack },
-]
+  { 
+    id: 1, 
+    name: "CONEX ™", 
+    title: "CONEX ™",
+    img: conex, 
+    behanceUrl: "https://www.behance.net/gallery/232705721/CONEX-"
+  },
+  { 
+    id: 2, 
+    name: "Meliha Shawarma™", 
+    title: "Meliha Shawarma™",
+    img: meliha, 
+    behanceUrl: "https://www.behance.net/gallery/222551581/-Meliha"
+  },
+  { 
+    id: 3, 
+    name: "Rahafah", 
+    title: "Rahafah",
+    img: rahafah, 
+    behanceUrl: "https://www.behance.net/gallery/220220707/Rahafah-"
+  },
+  { 
+    id: 4, 
+    name: "Gsa Group", 
+    title: "Gsa Group",
+    img: gsa, 
+    behanceUrl: "https://www.behance.net/gallery/199473005/GSA-group-"
+  },
+  { 
+    id: 5, 
+    name: "Vilack", 
+    title: "Vilack",
+    img: vilack, 
+    behanceUrl: "https://www.behance.net/gallery/220572147/Vilack"
+  },
+  { 
+    id: 6, 
+    name: "Kyar", 
+    title: "Kyar",
+    img: kyar, 
+    behanceUrl: "#"
+  },
+ 
+];
 
 const Works1 = () => {
   const sectionRef = useRef(null)
@@ -73,11 +118,35 @@ const Works1 = () => {
                 />
 
              
-                <div className="absolute bottom-3 right-3 backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
-                <h3 className="text-white text-xl md:text-2xl font-semibold text-right whitespace-nowrap">
-                {work.title}
-               </h3>
-               </div>
+               <div className="absolute inset-0 bg-gradient-to-t from-dark/95 via-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-[8px] flex flex-col justify-end p-6 z-10">
+                     <div className="flex items-center justify-end gap-4">
+                       {/* Title Glassmorphism Div */}
+                       <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                         <h3 className="text-white text-xl md:text-2xl font-semibold text-right whitespace-nowrap">
+                           {work.title}
+                         </h3>
+                       </div>
+                       
+                       {/* Behance Link Glassmorphism Div */}
+                       <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-6 py-3 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 delay-150">
+                         <a
+                           href={work.behanceUrl}
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           className="inline-flex items-center gap-2 text-white/90 hover:text-white transition-colors duration-200 text-right text-base md:text-lg whitespace-nowrap"
+                         >
+                           <span>مشاهدة في </span>
+                           <Image
+                             src={behance}
+                             alt="Behance"
+                             width={24}
+                             height={24}
+                             className="object-contain"
+                           />
+                         </a>
+                       </div>
+                     </div>
+                   </div>
               
                 </div>
             ))}
