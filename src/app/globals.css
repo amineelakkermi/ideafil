@@ -12,6 +12,18 @@ html, body {
   overflow-x: hidden;
 }
 
+#smooth-content, .panel, section {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+.panel, section {
+  will-change: transform;
+}
+
+
+
 /* ============================= */
 /* 📜 Scroll Snap Configuration */
 /* ============================= */
