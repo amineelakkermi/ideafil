@@ -7,7 +7,6 @@ import Services1 from './components/Services1';
 import Hero from './components/Hero';
 import Navbar from './components/Navbar';
 import Image from 'next/image';
-import background1 from '../../public/background1.png'
 import IdeafilGroups from './components/IdeafilGroups';
 import HorizontalPortfolio from './components/HorizontalPortfolio';
 
