@@ -55,7 +55,7 @@ const HorizontalPortfolio = () => {
       className={`relative overflow-hidden bg-dark ${styles.padding}`}
     >
       <div className="horiz-gallery-wrapper flex flex-nowrap justify-start relative">
-        <div dir="ltr" className="horiz-gallery-strip flex flex-nowrap gap">
+        <div dir="rtl" className="horiz-gallery-strip flex flex-nowrap gap">
           {worksData.map((work) => (
             <div
               key={work.id}
@@ -72,7 +72,12 @@ const HorizontalPortfolio = () => {
               <div className="absolute flex bottom-3 right-3
                opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                 <div className="flex  items-end gap-2">
-    
+             {/* Title */}
+                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 text-right">
+                    <h3 className="text-white text-lg md:text-xl font-semibold">
+                      {work.title}
+                    </h3>
+                  </div>
                   {/* Behance Link */}
                   <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2">
                     <a
@@ -91,13 +96,7 @@ const HorizontalPortfolio = () => {
                       />
                     </a>
                   </div>
-
-                   {/* Title */}
-                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 text-right">
-                    <h3 className="text-white text-lg md:text-xl font-semibold">
-                      {work.title}
-                    </h3>
-                  </div>
+                  
                 </div>
               </div>
 
