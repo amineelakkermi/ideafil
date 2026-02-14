@@ -196,7 +196,7 @@ export default function Navbar() {
       
       <nav
         dir="rtl"
-        className={`fixed top-0 left-0 right-0 z-[999] transition-all duration-300 ${
+        className={`sticky top-0 left-0 right-0 z-[999] transition-all duration-300 ${
           scrolled ? 'bg-dark' : 'bg-transparent'
         }`}
       >
