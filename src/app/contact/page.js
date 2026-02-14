@@ -1,16 +1,17 @@
 import React from 'react'
 import Navbar2 from '../components/Navbar2'
+import styles from '../style'
 
 const page = () => {
   return (
     <div className="min-h-screen bg-[#1a0046]">
       <Navbar2 />
 
-      <section className="px-6 py-0 min-h-[calc(100vh-90px)] flex items-center">
+      <section className={`${styles.padding} min-h-[calc(100vh-90px)] flex items-center`}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="flex gap-10 flex-col lg:flex-row justify-between items-center">
             <div dir="rtl" className="flex lg:hidden text-white text-right">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl  leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight text-center lg:text-start">
                خلنا نكتشف سوااا كيف مشروعك يقدر يترك أثـــر ..
                ويشد الإنتباه
               </h1>
