@@ -28,15 +28,7 @@ const SmoothProvider = ({ children }) => {
       }
     })
 
-    // S'assurer que le navbar reste sticky
-    const navbar = document.querySelector('nav')
-    if (navbar) {
-      smoother.effects(navbar, { speed: 0, lag: 0 })
-    }
-
-    return () => {
-      smoother.kill()
-    }
+    
   }, [])
 
   return (
