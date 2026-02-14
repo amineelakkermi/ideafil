@@ -28,7 +28,7 @@ const Stats = () => {
   return (
     <section
       id="stats"
-      className={`min-h-screen bg-dark text-white ${styles.padding}`}
+      className={`min-h-[80vh] bg-dark text-white ${styles.padding}`}
     >
       <div className="max-w-6xl mx-auto px-6">
 
