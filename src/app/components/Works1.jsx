@@ -61,9 +61,9 @@ const Works1 = () => {
           href="/works"
           className="inline-block px-7 py-3 rounded-full border-2 border-gray-400 hover:border-white/60 transition"
         >
-          <Paragraph className="text-gray-400 text-base sm:text-lg hover:text-white transition">
+          <p className="text-white text-base sm:text-lg hover:text-white transition">
             مشاهدة المزيـــد
-          </Paragraph>
+          </p>
         </Link>
       </div>
 

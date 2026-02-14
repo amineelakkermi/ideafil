@@ -31,10 +31,10 @@ const Team = () => {
         <div className="w-full flex gap flex-col sm:flex-row justify-between items-start">
             {/* Title */}
         <RoundedTitle title="فريقنـــا" />
-          <Paragraph className="text-white max-w-[420px]">
+          <p className="text-white max-w-[420px]">
             قوتنا في فريقنا ... بعقول مبدعة وخطط مدروسة ورؤية واضحة،
             نكسر الحدود لنقدم أعمالًا ترتقي بمعاييرك
-          </Paragraph>
+          </p>
         </div>
 
        <Divider  />

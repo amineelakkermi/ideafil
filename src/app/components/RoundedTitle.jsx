@@ -4,9 +4,9 @@ import Paragraph from './Paragraph'
 const RoundedTitle = ({title}) => {
   return (
      <div className=" inline-block px-7 py-3 rounded-full border-2 border-gray-400">
-      <Paragraph className="text-gray-400 text-base sm:text-lg">
+      <p className="text-white text-base sm:text-lg">
        {title}
-      </Paragraph>
+      </p>
     </div>
   )
 }
