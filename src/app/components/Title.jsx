@@ -19,7 +19,6 @@ const Title = ({ title }) => {
   return (
     <div>
       <h1
-        ref={titleRef}
         className={`${styles.title} text-white text-right`}
       >
         {title}
