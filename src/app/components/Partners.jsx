@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "../style";
 import Title from "./Title";
+import Paragraph from "./Paragraph";
 
 const logos = [
   "/partners/Asset 1.png",
@@ -30,16 +31,16 @@ const Partners = () => {
     <section className={`min-h-screen bg-dark text-white ${styles.padding}`}>
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-24">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
           <Title title={<> شركــاء النجـــاح </>} />
 
         
           <div className="max-w-xl">
-            <p className={`${styles.paragraph}`}>
+            <Paragraph>
               نؤمن بأن الإبداع هو شراكة حقيقية تحوّل الأفكار إلى حلول مبتكرة.
               نساعد شركاءنا على تحويل رؤاهم إلى تجارب ناجحة تُحدث تأثيرًا
               حقيقيًا في السوق.
-            </p>
+            </Paragraph>
           </div>
 
         

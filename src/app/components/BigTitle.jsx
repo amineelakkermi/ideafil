@@ -2,17 +2,16 @@
 
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
-import styles from '../style'
 
-const Title = ({ title }) => {
+const BigTitle = ({ title }) => {
   const titleRef = useRef(null)
 
   useEffect(() => {
     gsap.from(titleRef.current, {
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out',
+      y: 50,         
+      opacity: 0,     
+      duration: 1,    
+      ease: 'power3.out', 
     })
   }, [])
 
@@ -20,7 +19,7 @@ const Title = ({ title }) => {
     <div>
       <h1
         ref={titleRef}
-        className={`${styles.title} text-white text-right`}
+        className="text-[55px] lg:text-[85px] font-bold text-white"
       >
         {title}
       </h1>
@@ -28,4 +27,4 @@ const Title = ({ title }) => {
   )
 }
 
-export default Title
+export default BigTitle

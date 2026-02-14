@@ -8,6 +8,7 @@ import ideafil from '../../../public/ideafil.png'
 import technology from '../../../public/technology.png'
 import impact from '../../../public/impact.png'
 import Title from './Title'
+import Paragraph from './Paragraph'
 
 const cards = [
   {
@@ -106,9 +107,9 @@ const IdeafilGroups = () => {
               <span className="text-pink">أيدفـــــل</span>  
               </>}
               />
-              <p className={styles.paragraph}>
+              <Paragraph>
                 تحت اسمنا، ثلاث جهات تكمل بعض ولكل شركة دورها ومساحتها الخاصة.
-              </p>
+              </Paragraph>
             </div>
 
             <div className="flex-1 hidden lg:flex justify-end">

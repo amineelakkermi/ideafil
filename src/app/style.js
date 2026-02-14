@@ -8,11 +8,11 @@ const styles = {
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
   
-    paddingX: "lg:px-16 px-6", 
+    paddingX: "px-4", 
     paddingY: "lg:py-16 py-12",
-    padding: "lg:px-12 px-6 lg:py-20 py-12",
-    marginX: "lg:mx-16 mx-6",
-    marginY: "lg:my-16 my-6",
+    padding: "px-4 lg:py-20 py-12",
+    marginX: "lg:mx-12 mx-6",
+    marginY: "lg:my-12 my-6",
 };
 
 export const layout = {

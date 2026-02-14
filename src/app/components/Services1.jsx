@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../style'
 import RoundedTitle from './RoundedTitle'
 import Divider from './Divider'
+import Paragraph from './Paragraph'
 
 const services = [
   {
@@ -25,19 +26,21 @@ const services = [
 const Services1 = () => {
   return (
     <section
-  id="services"
-  className={`${styles.padding} bg-dark flex flex-col items-center gap`}
->
-  {/* Badge */}
-  <div className="w-full max-w-6xl mx-auto px-4">
-   <RoundedTitle title="وش نقدر نقدمـــ لك ؟؟" />
-  </div>
+    id="services"
+    className={`bg-dark`}>
+ 
 
-  {/* Divider */}
-  <Divider />
+       {/* Header */}
+      <div className={`max-w-6xl mx-auto flex flex-col gap-12 items-center ${styles.padding}`}>
+      <div className="w-full flex justify-between items-center">
+      <RoundedTitle title="وش نقدر نقدــــ لك ؟؟" />   
+      </div>
+      <Divider />
+      </div>
 
   {/* Services */}
-  <div className="w-full max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-20 gap-y-10">
+  <div className={`w-full max-w-6xl mx-auto ${styles.paddingX} grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+  gap-x-20 gap-y-10`}>
     {services.map((service, index) => (
       <div
         key={index}

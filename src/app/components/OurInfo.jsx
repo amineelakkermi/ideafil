@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import styles from '../style'
+import Paragraph from './Paragraph'
 
 const infos = [
   {
@@ -75,7 +76,7 @@ const OurInfo = () => {
                 openIndex === index ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
               }`}
             >
-              <p className={`${styles.paragraph} max-w-[750px]`}>{item.content}</p>
+              <Paragraph className="max-w-[750px]">{item.content}</Paragraph>
             </div>
           </div>
         ))}

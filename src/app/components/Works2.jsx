@@ -8,6 +8,7 @@ import Link from "next/link"
 import styles from "../style"
 import Divider from "./Divider"
 import RoundedTitle from "./RoundedTitle"
+import Paragraph from "./Paragraph"
 
 import conex from "../../../public/works/conex.png"
 import meliha from "../../../public/works/meliha.png"
@@ -81,10 +82,10 @@ const Works2 = () => {
       <div className={`max-w-6xl mx-auto  flex flex-col gap-12 items-center ${styles.padding}`}>
         <div className="w-full flex justify-between items-center">
           <RoundedTitle title="نماذج من أعمالنا" />
-          <span className="hidden sm:block text-white text-[16px] lg:text-[20px] text-right">
+          <Paragraph className="hidden sm:block text-white text-[16px] lg:text-[20px] text-right">
             مهما كان التحدي <br />
             نفصل لك الحل لي يناسبك
-          </span>
+          </Paragraph>
         </div>
         <Divider />
       </div>
@@ -157,9 +158,9 @@ const Works2 = () => {
           href="/works"
           className="inline-block px-7 py-3 rounded-full border-2 border-gray-400 hover:border-white/60 transition-colors duration-300"
         >
-          <p className="text-gray-400 text-base sm:text-lg hover:text-white transition-colors duration-300">
+          <Paragraph className="text-gray-400 text-base sm:text-lg hover:text-white transition-colors duration-300">
             مشاهدة المزيـــد
-          </p>
+          </Paragraph>
         </Link>
       </div>
 

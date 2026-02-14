@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import styles from '../style';
+import BigTitle from './BigTitle';
+import Paragraph from './Paragraph';
 
 const Hero = () => {
   return (
@@ -10,17 +12,18 @@ const Hero = () => {
      
      <div className="relative z-10 w-full max-w-6xl mx-auto px-6">
 
-      {/* Titre */}
-      <h1  className={`text-[55px] lg:text-[85px] font-bold text-white`}>
-        نملـــــا أفكـــــارك
+     
+      <BigTitle title={<>
+        نملــــأ أفكـــــارك
         <br />
-       بالإبــــداع     
-      </h1>
+        بالإبــــداع
+        </>} 
+      />
 
       {/* Paragraphe */}
-      <p className={`font-normal mt-5 text-[18px] leading-[30.8px] text-gray-300 text-right`}>
+      <Paragraph className="mt-5" color='gray-300'>
       اكتشف حلولنا المبتكرة والفعالة المصممة لتعزيز جاذبية علامتك , ورفع مستوى تفاعل جمهورك إلى آفاق جديدة
-      </p>
+      </Paragraph>
 
       
       </div>

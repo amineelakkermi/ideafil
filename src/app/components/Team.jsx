@@ -1,6 +1,7 @@
 import styles from "../style";
 import Divider from "./Divider";
 import RoundedTitle from "./RoundedTitle";
+import Paragraph from "./Paragraph";
 
 
 const teamMembers = [
@@ -30,10 +31,10 @@ const Team = () => {
         <div className="w-full flex gap flex-col sm:flex-row justify-between items-start">
             {/* Title */}
         <RoundedTitle title="فريقنـــا" />
-          <p className="text-white text-[18px] leading-relaxed text-right max-w-[420px]">
+          <Paragraph className="text-white max-w-[420px]">
             قوتنا في فريقنا ... بعقول مبدعة وخطط مدروسة ورؤية واضحة،
             نكسر الحدود لنقدم أعمالًا ترتقي بمعاييرك
-          </p>
+          </Paragraph>
         </div>
 
        <Divider  />

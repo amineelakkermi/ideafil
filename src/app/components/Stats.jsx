@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import gradientBg from "../../../public/gradientBg.png";
 import RoundedTitle from "./RoundedTitle";
 import styles from "../style";
+import Paragraph from "./Paragraph";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -38,15 +39,15 @@ const Stats = () => {
         </div>
 
         {/* Body */}
-        <div className="w-full  flex flex-col lg:flex-row justify-between gap-16 lg:gap-20">
+        <div className="w-full  flex flex-col lg:flex-row justify-between gap">
 
           {/* Right Text */}
           <div className="w-[100%] lg:w-[35%] text-right">
-            <p className="text-white text-base md:text-[18px] leading-relaxed">
+            <Paragraph className={`text-white`}>
               كل رقم يعبر عن خطوة قطعناها ... من مشاريع أنجزناها، إلى دول
               خدمناها، وتجارب وصلتنا بمستخدمين حول العالم.
               أرقام نعتز بها وتلهمنا لنواصل التطوير
-            </p>
+            </Paragraph>
           </div>
 
           {/* Stats Grid */}
