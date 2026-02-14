@@ -141,7 +141,7 @@ const Works2 = () => {
                          </a>
                        </div>
                      </div>
-                   </div>
+                </div>
               
                 </div>
             ))}
