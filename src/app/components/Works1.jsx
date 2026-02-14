@@ -40,7 +40,7 @@ const Works1 = () => {
     >
 
       {/* Header */}
-      <div className={`max-w-6xl mx-auto flex flex-col gap-12 items-center ${styles.padding}`}>
+      <div className={`max-w-6xl mx-auto flex flex-col gap items-center ${styles.padding}`}>
         <div className="w-full flex justify-between items-center">
           <RoundedTitle title="نماذج من أعمالنا" />
           <Paragraph className="hidden sm:block text-white text-[16px] lg:text-[20px] text-right">

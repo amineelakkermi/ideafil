@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { Poppins } from "next/font/google";
-import gradientBg from "../../../public/gradientBg.png";
-import RoundedTitle from "./RoundedTitle";
 import styles from "../style";
+import Title from "./Title";
 import Paragraph from "./Paragraph";
 
 const poppins = Poppins({
@@ -11,94 +9,72 @@ const poppins = Poppins({
   display: "swap",
 });
 
+const statsData = [
+  {
+    number: "50+",
+    label: "مشروع — بكفاءة ونتائج ملموسة",
+  },
+  {
+    number: "95%",
+    label: "نسبة رضا العملاء — قصص نجاح إبداعية",
+  },
+  {
+    number: "10+",
+    label: "قطاعات مختلفة — من الصناعة إلى الترفيه",
+  },
+];
+
 const Stats = () => {
   return (
     <section
       id="stats"
-      className={`${styles.paddingX} relative w-full min-h-[110vh] bg-dark overflow-hidden`}
+      className={`min-h-screen bg-dark text-white ${styles.padding}`}
     >
-      <div className="absolute inset-0 z-0 min-h-[110vh]">
-        <Image
-          src={gradientBg}
-          alt="Background gradient"
-          fill
-          className="object-fit object-center"
-          priority
-        />
-      </div>
+      <div className="max-w-6xl mx-auto px-6">
 
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-black/10 via-black/35 to-black/55" />
-       
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
+          
+          <Title title={<> أرقامنا آخر سنة </>} />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 min-h-[110vh] flex flex-col justify-center gap-16">
-        
-        {/* Title */}
-        <div className="w-full flex justify-start">
-          <RoundedTitle title="أرقامنا آخر سنة" />
-        </div>
-
-        {/* Body */}
-        <div className="w-full  flex flex-col lg:flex-row justify-between gap">
-
-          {/* Right Text */}
-          <div className="w-[100%] lg:w-[35%] text-right">
-            <Paragraph className={`text-white`}>
-              كل رقم يعبر عن خطوة قطعناها ... من مشاريع أنجزناها، إلى دول
-              خدمناها، وتجارب وصلتنا بمستخدمين حول العالم.
-              أرقام نعتز بها وتلهمنا لنواصل التطوير
+          <div className="max-w-xl">
+            <Paragraph>
+              كل رقم يعبر عن خطوة قطعناها ونبني عليه نجاح السنة القادمة.
+              نواصل التطوير بثقة، ونحوّل النتائج إلى قصص نجاح مستمرة.
             </Paragraph>
           </div>
 
-          {/* Stats Grid */}
-          <div className="w-full lg:w-[65%] relative grid grid-cols-2 gap-y-12 md:gap-y-16 gap-x-8 md:gap-x-16">
-
-            {/* Stat 1 */}
-            <div className="px-6 md:px-10 flex flex-col justify-center items-center">
-
-              <h3 className={`${poppins.className} text-white font-extrabold leading-none
-                text-[36px] sm:text-[56px] md:text-[72px]`}>
-                50+
-              </h3>
-              <p className="text-white/80 text-xs sm:text-sm mt-4">
-                مشروع — بكفاءة
-                <br />
-                ونتائج ملموسة
-              </p>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="px-6 md:px-10 text-right">
-              <h3 className={`${poppins.className} text-white font-extrabold leading-none
-                text-[36px] sm:text-[56px] md:text-[72px]`}>
-                95%
-              </h3>
-              <p className="text-white/80 text-xs sm:text-sm mt-4">
-                من عملائنا كنّا معهم
-                <br />
-                قصص نجاح إبداعية
-              </p>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="px-6 md:px-10 flex flex-col justify-center items-center">
-              <h3 className={`${poppins.className} text-white font-extrabold leading-none
-                text-[36px] sm:text-[56px] md:text-[72px]`}>
-                10+
-              </h3>
-              <p className="text-white/80 text-xs sm:text-sm mt-4">
-                قطاعات — من
-                <br />
-                الصناعة للترفيه
-              </p>
-            </div>
-
-            {/* Empty cell */}
-            <div />
-          </div>
         </div>
 
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          {statsData.map((stat, index) => (
+            <div
+              key={index}
+              className="p-10 rounded-2xl
+              backdrop-blur-xl
+              bg-white/5
+              border border-white/10
+              shadow-[0_8px_32px_0_rgba(0,0,0,0.37)]
+              hover:bg-white/10
+              hover:-translate-y-2
+              transition-all duration-300
+              text-center"
+            >
+              <h3
+                className={`${poppins.className}
+                text-white font-extrabold leading-none
+                text-[40px] sm:text-[56px]`}
+              >
+                {stat.number}
+              </h3>
 
+              <p className="text-white/70 text-sm mt-6 leading-relaxed">
+                {stat.label}
+              </p>
+            </div>
+          ))}
+        </div>
 
       </div>
     </section>
