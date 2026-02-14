@@ -50,34 +50,22 @@ export default function Navbar() {
   useEffect(() => {
     if (!mobileMenuRef.current || !mobileListRef.current) return;
 
+    const items = mobileListRef.current.querySelectorAll('li');
+    
     if (open) {
       setIsAnimating(true);
-      // Réinitialiser les styles pour l'animation d'entrée
-      const menu = mobileMenuRef.current;
-      const list = mobileListRef.current;
-      
-      menu.classList.remove('animate-menu-close');
-      menu.classList.add('animate-menu-open');
-      
       // Animation des items avec délai
-      const items = list.querySelectorAll('li');
       items.forEach((item, index) => {
-        item.style.animationDelay = `${index * 0.1}s`;
-        item.classList.remove('opacity-0', 'translate-y-5');
-        item.classList.add('animate-item-in');
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, index * 100);
       });
     } else {
       // Animation de fermeture
-      const menu = mobileMenuRef.current;
-      const list = mobileListRef.current;
-      
-      menu.classList.remove('animate-menu-open');
-      menu.classList.add('animate-menu-close');
-      
-      const items = list.querySelectorAll('li');
       items.forEach((item) => {
-        item.classList.remove('animate-item-in');
-        item.classList.add('opacity-0', 'translate-y-5');
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
       });
       
       setTimeout(() => {
@@ -319,17 +307,17 @@ export default function Navbar() {
                 {navLinks.map((link, index) => (
                   <li 
                     key={link.name} 
-                    className="flex items-start gap-4 group opacity-0 translate-y-5"
+                    className="flex items-start gap-4 group opacity-0 translate-y-5 transition-all duration-300"
+                    style={{
+                      opacity: open ? 1 : 0,
+                      transform: open ? 'translateY(0)' : 'translateY(20px)',
+                      transitionDelay: open ? `${index * 100}ms` : '0ms',
+                    }}
                   >
                     <Link
                       href={link.href}
                       onClick={(e) => handleLinkClick(e, link.href)}
                       className="text-white text-[20px] font-medium px-8 py-4 rounded-full border-2 border-white/30 hover:border-white hover:bg-white/10 transform transition-all duration-300 hover:scale-105 w-48 text-center backdrop-blur-sm"
-                      style={{
-                        animation: 'fadeInUp 0.5s ease-out forwards',
-                        opacity: 0,
-                        animationDelay: `${index * 100}ms`,
-                      }}
                     >
                       <span className="relative z-10 transition-all duration-300 group-hover:text-purple-300">{link.name}</span>
                     </Link>
