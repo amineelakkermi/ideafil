@@ -335,6 +335,20 @@ export default function Navbar() {
                 ))}
               </ul>
 
+              {/* Contact Button */}
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="/contact"
+                  className="flex items-center justify-center px-8 py-4 rounded-full border-2 border-white/30 hover:border-white hover:bg-white/10 transform transition-all duration-300 hover:scale-105 w-48 text-center backdrop-blur-sm text-white text-[20px] font-medium"
+                  style={{
+                    animation: 'fadeInUp 0.5s ease-out forwards',
+                    opacity: 0,
+                    animationDelay: `${3 * 100}ms`,
+                  }}
+                >
+                  <span className="relative z-10 transition-all duration-300 group-hover:text-purple-300">تواصل معنا</span>
+                </Link>
+              </div>
             
             </nav>
           </div>
