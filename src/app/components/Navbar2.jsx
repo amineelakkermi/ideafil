@@ -199,7 +199,7 @@ export default function Navbar() {
         className={`sticky bg-dark top-0 left-0 right-0 z-[999] transition-all duration-300`}
       >
         <div className="max-w-6xl mx-auto px-6">
-          <div className="h-[90px] flex items-center justify-between relative">
+          <div className="h-[80px] lg:h-[90px] flex items-center justify-between relative">
 
             {/* Mobile Menu Button (always left) */}
             <button
