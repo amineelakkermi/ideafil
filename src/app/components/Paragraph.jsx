@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import styles from '../style'
 
-const Paragraph = ({ children, className = "" , color = "white" }) => {
+const Paragraph = ({ children, className = "" , color = "gray-300" }) => {
   const paragraphRef = useRef(null)
 
   useEffect(() => {

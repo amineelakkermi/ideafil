@@ -21,7 +21,7 @@ const Hero = () => {
       />
 
       {/* Paragraphe */}
-      <Paragraph className="mt-5" color='gray-300'>
+      <Paragraph className="mt-5 text-gray-300">
       اكتشف حلولنا المبتكرة والفعالة المصممة لتعزيز جاذبية علامتك , ورفع مستوى تفاعل جمهورك إلى آفاق جديدة
       </Paragraph>
 
