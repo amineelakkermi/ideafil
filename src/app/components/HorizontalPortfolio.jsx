@@ -37,7 +37,7 @@ const HorizontalPortfolio = () => {
             trigger: sec,
             pin: true,
             scrub: 1,
-            start: "top top",
+            start: "center center",
             end: () => `+=${pinWrapWidth}`,
             invalidateOnRefresh: true,
           }
@@ -55,7 +55,7 @@ const HorizontalPortfolio = () => {
       className={`relative overflow-hidden bg-dark ${styles.padding}`}
     >
       <div className="horiz-gallery-wrapper flex flex-nowrap justify-start relative">
-        <div dir="ltr" className="horiz-gallery-strip flex flex-nowrap gap-6">
+        <div dir="ltr" className="horiz-gallery-strip flex flex-nowrap gap">
           {worksData.map((work) => (
             <div
               key={work.id}
