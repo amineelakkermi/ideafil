@@ -100,24 +100,26 @@ const Services2 = () => {
 
   return (
     <>
-      <style jsx>{`
-        @keyframes scrollVertical {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-        
-        .scroll-container {
-          animation: scrollVertical 30s linear infinite;
-        }
-        
-        .scroll-container:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+     <style jsx>{`
+  @keyframes scrollVertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+
+  .scroll-container {
+    animation: scrollVertical 30s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .scroll-wrapper:hover .scroll-container {
+    animation-play-state: running;
+  }
+`}</style>
+
       
       <section className="relative w-full min-h-screen bg-dark overflow-hidden">
         {/* Background Image */}
@@ -143,7 +145,7 @@ const Services2 = () => {
             
             {/* Right Part - Services Cards with Infinite Scroll */}
             <div className="flex-1 w-full max-w-md mx-auto lg:mx-0">
-              <div className="relative h-[600px] lg:h-[700px] overflow-hidden">
+            <div className="scroll-wrapper relative h-[600px] lg:h-[1650px] overflow-hidden">
                 {/* Gradient masks for smooth fade effect */}
                 <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent z-20 pointer-events-none" />
                 <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-dark to-transparent z-20 pointer-events-none" />

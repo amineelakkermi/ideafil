@@ -12,7 +12,6 @@ const page = () => {
     <AboutUs />
     <OurInfo />
     <Services2 />
-    <Team />
     </div>
   )
 }

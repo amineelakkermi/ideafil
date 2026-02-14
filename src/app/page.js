@@ -37,7 +37,6 @@ export default function Home() {
         <Works1 />
         <Stats />
         <Partners />
-        <IdeafilGroups />
         <Cta />
       </div>
     </div>
