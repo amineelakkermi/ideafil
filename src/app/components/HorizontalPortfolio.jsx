@@ -72,13 +72,7 @@ const HorizontalPortfolio = () => {
               <div className="absolute flex bottom-3 right-3
                opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg">
                 <div className="flex  items-end gap-2">
-                  {/* Title */}
-                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 text-right">
-                    <h3 className="text-white text-lg md:text-xl font-semibold">
-                      {work.title}
-                    </h3>
-                  </div>
-
+    
                   {/* Behance Link */}
                   <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2">
                     <a
@@ -96,6 +90,13 @@ const HorizontalPortfolio = () => {
                         className="object-contain"
                       />
                     </a>
+                  </div>
+
+                   {/* Title */}
+                  <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 text-right">
+                    <h3 className="text-white text-lg md:text-xl font-semibold">
+                      {work.title}
+                    </h3>
                   </div>
                 </div>
               </div>
