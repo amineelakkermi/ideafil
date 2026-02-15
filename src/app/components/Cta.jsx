@@ -3,6 +3,7 @@ import ctaBg from "../../../public/ctaBg.png";
 import styles from '../style';
 import Paragraph from './Paragraph';
 import BigTitle from './BigTitle';
+import Link from 'next/link';
 
 const Cta = () => {
   return (
@@ -22,17 +23,19 @@ const Cta = () => {
       />
 
       <div className='relative z-10 w-full flex flex-col justify-center items-center gap-12'>
-      <div className="inline-block max-w-[250px] px-10 py-2 rounded-full bg-pink">
-      <Paragraph className="text-white text-base sm:text-lg">
-       أكيد حــاب تكلمـــنا
-      </Paragraph>
-      </div>
+    
 
       <h2 className={`text-[35px] lg:text-[40px] text-center text-white`}>
         لنكتشــف معا قـــوة حضــــورك
         <br />
         تواصل معنا اليوم وابدأ رحلتك نحو التأثير والتميز
        </h2>
+
+      <div className="inline-block max-w-[250px] px-10 py-2 rounded-full bg-pink">
+      <Link href='/contact' className="text-white text-base sm:text-lg">
+       أكيد حــاب تكلمـــنا
+      </Link>
+      </div>
 
      
       </div>
