@@ -12,6 +12,12 @@ import maps from "../../../public/maps.png";
 import Ideafil from "./Ideafil";
 import Link from "next/link";
 
+const navLinks = [
+  { name: 'الرئيسيــة', href: '/' },
+  { name: 'من نحـــن', href: '/about' },
+  { name: 'الأعمـــال الأخيرة', href: '/works' },
+];
+
 const Footer = () => {
   // Répéter le texte pour créer un effet de boucle fluide sans espace
   const scrollingText = 'IDEAFIL';
@@ -67,6 +73,19 @@ const Footer = () => {
               />
             </Link>
             
+            {/* Navigation Links */}
+            <div className="flex text-center flex-col md:flex-row gap">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-white/80 hover:text-white transition-colors duration-300 text-[16px] font-medium"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+            
             {/* Social icons */}
             <div className="flex items-center gap-6">
               <a target="_blank" href="https://www.behance.net/ideafilco1" className="hover:opacity-80 transition">
@@ -106,7 +125,6 @@ const Footer = () => {
                 />
               </a>
             </div>
-
             
           </div>
 
