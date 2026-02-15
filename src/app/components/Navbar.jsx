@@ -244,7 +244,7 @@ export default function Navbar() {
               {/* CTA Button */}
               <Link
                 href="/contact"
-                className="hidden md:flex items-center justify-center px-[15px] py-[2px] gap-[10px] w-[150px] h-[55px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
+                className="hidden md:flex items-center justify-center px-[5px] py-[2px] gap-[10px] w-[120px] h-[45px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
               >
                 <span className="text-base font-medium relative z-10">تواصل معنا</span>
               </Link>
