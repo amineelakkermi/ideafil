@@ -242,12 +242,27 @@ export default function Navbar() {
             {/* Logo Left + Mobile Button Container */}
             <div className="flex items-center justify-start min-w-[150px] gap-4">
               {/* CTA Button */}
-              <Link
-                href="/contact"
-                className="hidden md:flex items-center justify-center px-[5px] py-[2px] gap-[10px] w-[120px] h-[45px] bg-[rgba(140,69,255,0.4)] border border-[rgba(255,255,255,0.15)] shadow-[inset_0px_0px_6px_3px_rgba(255,255,255,0.25)] backdrop-blur-[7px] rounded-[8px] text-white hover:bg-[rgba(140,69,255,0.6)] transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-purple-500/25"
-              >
-                <span className="text-base font-medium relative z-10">تواصل معنا</span>
-              </Link>
+             <Link
+             href="/contact"
+             className="hidden md:inline-flex items-center justify-center
+             px-8 py-3 relative overflow-hidden
+             rounded-[4px] font-medium text-white
+             bg-gradient-to-r from-[#7F00FE] to-[#a855f7]
+             shadow-[0_0_25px_rgba(127,0,254,0.35)]
+             transition-all duration-300
+             hover:shadow-[0_0_40px_rgba(127,0,254,0.6)]
+             hover:-translate-y-1
+             active:scale-95 group">
+  
+             {/* Glow overlay */}
+             <span className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+             {/* Text */}
+             <span className="relative z-10 flex items-center gap-2">
+               تواصل معنا  
+             </span>
+            </Link>
+
             </div>
           </div>
         </div>

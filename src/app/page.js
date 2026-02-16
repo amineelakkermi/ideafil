@@ -27,6 +27,7 @@ export default function Home() {
             <source src="/backgroundVideo.mp4" type="video/mp4" />
           </video>
         </div>
+        
         <Hero />
       </div>
       
