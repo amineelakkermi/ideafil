@@ -5,7 +5,7 @@ import ctaBg from '../../../public/ctaBg.png'
 const AboutUs = () => {
     return (
       <section className={`${styles.padding} min-h-screen bg-dark`}>
-      <div className="max-w-5xl mx-auto px-4 flex flex-col gap">
+      <div className="max-w-6xl mx-auto px-6 flex flex-col gap">
         <div className="w-full flex  flex-col md:flex-row gap-5 items-center">
         <h1 className={`text-[35px] lg:text-[40px] font-bold text-white`}>نملــأ قصصـــك  بالإبـــداع</h1>
         <p className={`${styles.paragraph}`}>نحن نبني على منهجيتنا المتقنة لنصمّم مشروعًا مخصصًا وتعاونيًا بدرجة عالية لكل واحد من شركائنا.        </p>

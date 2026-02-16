@@ -59,7 +59,7 @@ const Footer = () => {
       <footer dir="rtl" className="relative bg-dark text-white overflow-hidden">
         {/* Gradient background */}
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-12">
           {/* Top row */}
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             {/* Logo */}

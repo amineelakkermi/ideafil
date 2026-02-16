@@ -31,7 +31,7 @@ const OurInfo = () => {
   return (
     <section className={`${styles.padding} min-h-screen bg-dark`}>
     
-      <div className='max-w-5xl mx-auto px-4 flex flex-col'>
+      <div className='max-w-6xl mx-auto px-6 flex flex-col'>
         {/* Info */}
         {infos.map((item, index) => (
           <div
