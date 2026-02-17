@@ -35,12 +35,13 @@ const Stats = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
           
-          <Title title={<> أرقامنا آخر سنة </>} />
+          <Title title={<> أرقامـــنا اخر سنة </>} />
 
           <div className="max-w-xl">
             <Paragraph>
-              كل رقم يعبر عن خطوة قطعناها ونبني عليه نجاح السنة القادمة.
-              نواصل التطوير بثقة، ونحوّل النتائج إلى قصص نجاح مستمرة.
+              كل رقم يعبر عن خطوة قطعناها ونبني عليه نجاح السنة القادمة
+              نواصل التطوير بثقة ونحوّل النتائج إلى قصص نجاح مستمرة
+           
             </Paragraph>
           </div>
 
