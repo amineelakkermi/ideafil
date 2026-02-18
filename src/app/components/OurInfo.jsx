@@ -30,7 +30,7 @@ const OurInfo = () => {
   }
 
   return (
-    <section className={`${styles.padding}  bg-dark`}>
+    <section className={`${styles.padding} min-h-[90vh]  bg-dark`}>
     
       <div className='max-w-6xl mx-auto px-6 flex flex-col'>
         {/* Info */}
