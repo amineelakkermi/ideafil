@@ -136,11 +136,11 @@ const Services2 = () => {
           <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-20">
             {/* Left Part - Title */}
             <div className="flex lg:hidden">
-              <h1 className={`${styles.title} text-white text-right`}>
+              <Title className={`${styles.title} text-white text-right`}>
                 حلـــول متكاملـــة 
                 <br />
                 برؤيــة إبـــداعية
-              </h1>
+              </Title>
             </div>
             
             {/* Right Part - Services Cards with Infinite Scroll */}
