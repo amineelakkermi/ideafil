@@ -4,6 +4,7 @@ import styles from '../style';
 import Paragraph from './Paragraph';
 import BigTitle from './BigTitle';
 import Link from 'next/link';
+import Title from './Title';
 
 const Cta = () => {
   return (
@@ -30,7 +31,8 @@ const Cta = () => {
         <br />
         تواصل معنا اليوم وابدأ رحلتك نحو التأثير والتميز
        </h2>
-
+       
+      
       <div className="inline-block max-w-[250px] px-10 py-2 rounded-full bg-pink">
       <Link href='/contact' className="text-white text-base sm:text-lg">
        أكيد حــاب تكلمـــنا

@@ -111,11 +111,11 @@ const Services2 = () => {
   }
 
   .scroll-container {
-    animation: scrollVertical 30s linear infinite;
+    animation: scrollVertical 60s linear infinite;
     animation-play-state: paused;
   }
 
-  .scroll-wrapper:hover .scroll-container {
+  .scroll-wrapper .scroll-container {
     animation-play-state: running;
   }
 `}</style>
