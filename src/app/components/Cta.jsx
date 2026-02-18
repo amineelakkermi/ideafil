@@ -25,12 +25,17 @@ const Cta = () => {
 
       <div className='relative z-10 w-full flex flex-col justify-center items-center gap-12'>
     
-
-      <h2 className={`text-[35px] lg:text-[40px] text-center text-white`}>
+       
+     <div>
+      <Title className="text-[35px] lg:text-[40px] text-center text-white">
         لنكتشــف معا قـــوة حضــــورك
-        <br />
+       </Title>
+
+       <Title className="text-[35px] lg:text-[40px] text-center text-white">
         تواصل معنا اليوم وابدأ رحلتك نحو التأثير والتميز
-       </h2>
+       </Title>
+
+     </div>
        
       
       <div className="inline-block max-w-[250px] px-10 py-2 rounded-full bg-pink">

@@ -35,7 +35,11 @@ const Stats = () => {
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
           
-          <Title title={<> أرقامـــنا اخر سنة </>} />
+        
+          <Title className={`${styles.title}`}>
+          أرقامـــنا اخر سنة 
+          </Title>
+
 
           <div className="max-w-xl">
             <Paragraph>

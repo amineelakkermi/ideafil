@@ -32,7 +32,9 @@ const Partners = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12 mb-24">
-          <Title title={<> شركــاء النجـــاح </>} />
+          <Title className={`${styles.title}`}>
+          شركــاء النجـــاح  
+          </Title>
 
         
           <div className="max-w-xl">

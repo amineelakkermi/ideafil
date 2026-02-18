@@ -2,7 +2,6 @@ import Image from 'next/image'
 import styles from '../style';
 import BigTitle from './BigTitle';
 import Paragraph from './Paragraph';
-import AnimatedText from './AnimatedText';
 
 const Hero = () => {
   return (
