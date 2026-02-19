@@ -1,0 +1,187 @@
+'use client';
+
+import Image from "next/image";
+import gridBg from "../../../public/gridBg.png";
+import Title from "./Title";
+import ServiceCard from "./ServiceCard";
+import styles from "../style";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+const servicesData = [
+   {
+    title: "البراندينـــق / الهوية البصرية",
+    serviceAr: [
+      "تموضع العلامة التجارية",
+      "ابتكار اسم العلامة",
+      "استراتيجية الاتصال",
+      "استراتيجية المحتوى",
+      "استراتيجية منصات التواصل",
+      "الهوية البصرية",
+      "تصميم الأيقونات",
+      "الرسومات التوضيحية",
+      "دليل الهوية",
+      "تصميم المواد التعريفية",
+      "التغليف و الطباعة",
+      "التصميم ثلاثي الأبعاد"
+    ],
+    serviceEn: [
+      "Brand positioning",
+      "Brand Naming",
+      "Communication strategy",
+      "Content Strategy",
+      "Social media strategy",
+      "Visual identity",
+      "Iconography",
+      "Illustrations",
+      "Brand Guidelines kit",
+      "Collateral Design",
+      "Packaging & Printing",
+      "3D design"
+    ],
+    bg: "bg-mauve"
+  },
+   {
+    title: "التطويـــر / التــقنية",
+    serviceAr: [
+     "تطوير الواجهة الأمامية",
+     "تطوير الواجهة الخلفية",
+     "تصميم المواقع الإلكترونية",
+     "إدارة محتوى المواقع",
+     "تصميم التطبيقات",
+     "تطوير التطبيقات",
+     "إدارة محتوى التطبيقات",
+     "شهادات الحماية والتدقيق",
+     "تقرير تدقيق الموقع الإلكتروني"
+    ],
+    serviceEn: [
+      "Front-end development",
+      "Back-end development",
+      "Website Design",
+      "Web Content Management",
+      "App Design",
+      "App Development",
+      "App Content Management",
+      "Protection & certificates",
+      "Website Audit Report"
+    ],
+    bg: "bg-blue"
+  },
+  {
+    title: "الاستراتيجيــة / التسويـــق",
+    serviceAr: [
+      "إدارة العلامة التجارية",
+      "الإشـــراف الفني",
+      "صناعة المحتوى",
+      "الحملات الإعلانية",
+      "خطة تسويقية",
+      "خطة محتوى",
+      "خطة منصات التواصل",
+      "الموشن والجرافيكس المتحركة"
+
+    ],
+    serviceEn: [
+     "Brand Management",
+     "Art Direction",
+     "Content creation",
+     "Media Campaign",
+     "Marketing plan",
+     "Content plan",
+     "Social media plan",
+     "Motion/Animation"
+    ],
+    bg: "bg-pink"
+  },
+ 
+
+];
+
+const Carousel = () => {
+  return (
+    <section className="relative w-full min-h-screen bg-dark overflow-hidden">
+      {/* Background Image */}
+      <Image
+        src={gridBg}
+        alt="Background grid"
+        fill
+        className="object-cover z-0"
+        priority
+      />
+
+      {/* Content */}
+      <div className={`relative z-10 max-w-6xl mx-auto ${styles.padding}`}>
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-20">
+          {/* Left Part - Title */}
+          <div className="flex lg:hidden">
+            <h1 className={`${styles.title} text-white text-right`}>
+              حلـــول متكاملـــة 
+              <br />
+              برؤيــة إبـــداعية
+            </h1>
+          </div>
+          
+          {/* Right Part - Services Cards with Swiper */}
+          <div className="flex-1 w-full max-w-md mx-auto lg:mx-0">
+            <div className="relative h-[600px] lg:h-[700px]">
+              {/* Gradient masks for smooth fade effect */}
+              <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent z-20 pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-dark to-transparent z-20 pointer-events-none" />
+              
+              {/* Swiper Container */}
+              <Swiper
+                direction="vertical"
+                slidesPerView={1}
+                spaceBetween={30}
+                loop={true}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }}
+                speed={800}
+                allowTouchMove={true}
+                grabCursor={true}
+                className="h-full"
+                style={{
+                  '--swiper-navigation-size': '24px',
+                  '--swiper-pagination-bullet-width': '8px',
+                  '--swiper-pagination-bullet-height': '8px',
+                  '--swiper-pagination-bullet-horizontal-gap': '8px',
+                  '--swiper-pagination-color': '#ffffff',
+                  '--swiper-pagination-bullet-inactive-color': 'rgba(255, 255, 255, 0.3)',
+                  '--swiper-pagination-bullet-inactive-opacity': '1',
+                }}
+              >
+                {servicesData.map((service, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="flex items-center justify-center h-full py-8">
+                      <ServiceCard
+                        title={service.title}
+                        serviceAr={service.serviceAr}
+                        serviceEn={service.serviceEn}
+                        bg={service.bg}
+                      />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+          </div>
+        
+          {/* Left Part - Title */}
+          <div className="hidden lg:flex flex-1">
+            <h1 className={`${styles.title} text-white text-right`}>
+              حلـــول متكاملـــة 
+              <br />
+              برؤيــة إبـــداعية
+            </h1>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Carousel;

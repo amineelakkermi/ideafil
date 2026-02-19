@@ -31,7 +31,7 @@ const ServiceCard = ({ title, serviceAr = [], serviceEn = [], bg = "bg-mauve" })
               
               {/* Arabic Service - Right */}
               <span className="text-right flex-1">
-                <span className="mr-2">{item}</span>
+                <span className="">{item}</span>
               </span>
                  {/* English Service - Left */}
               <span className="text-left flex-1">
@@ -46,5 +46,4 @@ const ServiceCard = ({ title, serviceAr = [], serviceEn = [], bg = "bg-mauve" })
 };
 
 export default ServiceCard;
-
 

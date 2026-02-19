@@ -5,6 +5,11 @@ import gridBg from "../../../public/gridBg.png";
 import Title from "./Title";
 import ServiceCard from "./ServiceCard";
 import styles from "../style";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 const servicesData = [
    {
@@ -111,7 +116,7 @@ const Services2 = () => {
   }
 
   .scroll-container {
-    animation: scrollVertical 60s linear infinite;
+    animation: scrollVertical 30s linear infinite;
     animation-play-state: paused;
   }
 
@@ -136,30 +141,82 @@ const Services2 = () => {
           <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start gap-12 lg:gap-20">
             {/* Left Part - Title */}
             <div className="flex lg:hidden">
-              <Title className={`${styles.title} text-white text-right`}>
+              <h1 className={`${styles.title} text-white text-center`}>
                 حلـــول متكاملـــة 
                 <br />
                 برؤيــة إبـــداعية
-              </Title>
+              </h1>
             </div>
             
-            {/* Right Part - Services Cards with Infinite Scroll */}
+            {/* Right Part - Services Cards */}
             <div className="flex-1 w-full max-w-md mx-auto lg:mx-0">
-            <div className="scroll-wrapper relative h-[600px] lg:h-[1650px] overflow-hidden">
-                {/* Gradient masks for smooth fade effect */}
-                <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent z-20 pointer-events-none" />
-                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-dark to-transparent z-20 pointer-events-none" />
-                
-                <div className="scroll-container flex flex-col gap-8">
-                  {duplicatedServices.map((service, index) => (
-                    <ServiceCard
-                      key={`${index}-${service.title}`}
-                      title={service.title}
-                      serviceAr={service.serviceAr}
-                      serviceEn={service.serviceEn}
-                      bg={service.bg}
-                    />
-                  ))}
+              {/* Mobile: Swiper Carousel */}
+              <div className="flex lg:hidden">
+                <div className="relative min-h-[600px] overflow-hidden">
+                  {/* Gradient masks for smooth fade effect */}
+                  <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent z-20 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-dark to-transparent z-20 pointer-events-none" />
+                  
+                  <Swiper
+                    direction="horizontal"
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    loop={true}
+                    autoplay={{
+                      delay: 4000,
+                      disableOnInteraction: false,
+                      pauseOnMouseEnter: true,
+                    }}
+                    speed={800}
+                    allowTouchMove={true}
+                    grabCursor={true}
+                    modules={[Pagination]}
+                    pagination={{
+                      clickable: true,
+                      dynamicBullets: false,
+                    }}
+                    className="h-full w-full"
+                    style={{
+                      '--swiper-pagination-color': '#ffffff',
+                      '--swiper-pagination-bullet-inactive-color': 'rgba(255, 255, 255, 0.3)',
+                      '--swiper-pagination-bullet-inactive-opacity': '1',
+                    }}
+                  >
+                    {servicesData.map((service, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="flex items-center justify-center h-full px-4">
+                          <div className="w-full max-w-md">
+                            <ServiceCard
+                              title={service.title}
+                              serviceAr={service.serviceAr}
+                              serviceEn={service.serviceEn}
+                              bg={service.bg}
+                            />
+                          </div>
+                        </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
+                </div>
+              </div>
+              {/* Desktop: Infinite Scroll */}
+              <div className="hidden lg:block">
+                <div className="scroll-wrapper relative h-[1650px] overflow-hidden">
+                  {/* Gradient masks for smooth fade effect */}
+                  <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-dark to-transparent z-20 pointer-events-none" />
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-dark to-transparent z-20 pointer-events-none" />
+                  
+                  <div className="scroll-container flex flex-col gap-8">
+                    {duplicatedServices.map((service, index) => (
+                      <ServiceCard
+                        key={`${index}-${service.title}`}
+                        title={service.title}
+                        serviceAr={service.serviceAr}
+                        serviceEn={service.serviceEn}
+                        bg={service.bg}
+                      />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

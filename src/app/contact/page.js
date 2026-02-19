@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar2 from '../components/Navbar2'
 import styles from '../style'
 
